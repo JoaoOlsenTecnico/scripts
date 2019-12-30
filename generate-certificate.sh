@@ -295,18 +295,6 @@ EOF
         exit 2
     fi
 
-    for f in "$(web_server_conf_dir)/${domains[0]}.key"; do
-        if [ -e "$f" ]; then
-            rm $(web_server_conf_dir)/${domains[0]}.key
-        fi
-    done
-
-    for f in "$(web_server_conf_dir)/${domains[0]}.crt"; do
-        if [ -e "$f" ]; then
-            //rm $(web_server_conf_dir)/${domains[0]}.crt
-        fi
-    done
-
     enable_exit_trap
     backup_configuration
     stop_server
