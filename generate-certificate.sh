@@ -297,9 +297,8 @@ EOF
 
     for f in "$(web_server_conf_dir)/${domains[0]}.crt" "$(web_server_conf_dir)/${domains[0]}.key"; do
         if [ -e "$f" ]; then
-            stderr_print '\nIt seems there is a valid certificate in the web server configuration folder. Please renew that certificate or generate new ones manually'
-            documentation_support_message
             rm $(web_server_conf_dir)/${domains[0]}.crt
+            rm $(web_server_conf_dir)/${domains[0]}.key
         fi
     done
 
